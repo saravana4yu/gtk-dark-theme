@@ -1,0 +1,260 @@
+
+
+@define-color window_bg_color #141414;
+@define-color window_backdrop_color #141414;
+@define-color window_fg_color #fafafa;
+window.csd {
+background-color: @window_bg_color;
+}
+window.csd:backdrop {
+background-color: @window_backdrop_color;
+}
+
+@define-color view_bg_color #141414;
+@define-color view_backdrop_color #141414;
+@define-color view_fg_color #fafafa;
+.content-pane, .content-pane.view, .view {
+background-color: @view_bg_color;
+}
+.content-pane:backdrop, .content-pane.view:backdrop, .view:backdrop {
+background-color: @view_backdrop_color;
+}
+
+@define-color accent_color #fe413c;
+@define-color accent_bg_color #fe413c;
+@define-color accent_fg_color #fafafa;
+
+link {
+color: @accent_bg_color;
+}
+link:hover {
+color: @accent_color;
+}
+
+/* Toggle Switch */
+
+/* Window Border and Corner Radius */
+window.csd, dialog.csd,
+window.csd > decoration,
+window.csd > decoration-overlay {
+border: 0px solid rgba(200, 136, 40, 0);
+}
+window.csd:backdrop, dialog:backdrop.csd,
+window.csd:backdrop > decoration,
+window.csd:backdrop > decoration-overlay {
+border: 0px solid rgba(139, 101, 43, 0);
+}
+window.csd.maximized, window.csd.maximized > decoration, window.csd.maximized > decoration-overlay,
+window.csd.maximized > headerbar, window.csd.maximized > .top-bar, window.csd.maximized > .titlebar,
+window.csd.fullscreen, window.csd.fullscreen > decoration, window.csd.fullscreen > decoration-overlay,
+window.csd.fullscreen > headerbar, window.csd.fullscreen > .top-bar, window.csd.fullscreen > .titlebar,
+tooltip > decoration, tooltip > decoration-overlay {
+border: none;
+outline: none;
+border-radius: 0px;
+}
+window.csd.tiled, window.csd.tiled-top, window.csd.tiled-right, window.csd.tiled-bottom, window.csd.tiled-left,
+window.csd.tiled > decoration, window.csd.tiled > decoration-overlay,
+window.csd.tiled > headerbar, window.csd.tiled > .top-bar, window.csd.tiled > .titlebar {
+border-radius: 0px;
+}
+window.csd .tiled-top .tiled-right .tiled-bottom .tiled-left {
+border: none;
+outline: none;
+}
+
+    window.csd, dialog.csd,
+    decoration, decoration-overlay {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    decoration, decoration-overlay,
+    headerbar, .top-bar, .titlebar {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    window.unified {
+        border-radius: 20px;
+    }
+    /* Terminal Preferences */
+    window > box > box > frame > scrolledwindow > viewport > list, window > box > box > frame > border {
+        border-bottom-left-radius: 20px;
+    }
+    window > box > box > stack > widget > notebook,
+    window > box > box > stack > widget > notebook > stack {
+        border-bottom-right-radius: 20px;
+    }
+    /* dconf */
+    window.dconf-editor .keys-list,
+    window.dconf-editor .properties-list {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    /* Videos */
+    window > stack > box > scrolledwindow ,
+    window > stack > box > scrolledwindow > iconview {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+window.csd, window:backdrop.csd {
+    border: none;
+}
+window.popup > decoration {
+    border: none;
+    border-radius: 6px;
+}
+
+@define-color headerbar_bg_color #141414;
+@define-color headerbar_backdrop_color #141414;
+@define-color headerbar_fg_color #fafafa;
+
+headerbar,
+.top-bar,
+.titlebar {
+    color: @headerbar_fg_color;
+    background-color: @headerbar_bg_color;
+    background-image:none;
+}
+headerbar:backdrop,
+.top-bar:backdrop,
+.titlebar:backdrop {
+    background-color: @headerbar_backdrop_color;
+}
+headerbar > label, headerbar > box > label {
+    color: @headerbar_fg_color;
+}
+    
+@define-color sidebar_bg_color #141414;
+@define-color sidebar_backdrop_color #141414;
+@define-color sidebar_fg_color #fafafa;
+
+@define-color secondary_sidebar_bg_color #141414;
+@define-color secondary_sidebar_backdrop_color #141414;
+@define-color secondary_sidebar_fg_color #fafafa;
+
+.sidebar,
+.navigation-sidebar,
+.sidebar-pane,
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane,
+scrolledwindow>viewport>list /* Gnome Tweaks */{
+    background-color: @sidebar_bg_color;
+}
+.sidebar:backdrop,
+.navigation-sidebar:backdrop,
+.sidebar-pane:backdrop,
+.content-pane .sidebar-pane:backdrop,
+.sidebar-pane .content-pane:backdrop,
+scrolledwindow>viewport>list:backdrop {
+    background-color: @sidebar_backdrop_color;
+}
+
+@define-color card_bg_color #212121;
+@define-color card_backdrop_color #212121;
+@define-color card_fg_color #fafafa;
+
+@define-color dialog_bg_color #fe413c;
+@define-color dialog_backdrop_color #fe413c;
+@define-color dialog_fg_color #fafafa;
+
+@define-color popover_bg_color #fe413c;
+@define-color popover_fg_color #fafafa;
+popover > contents {
+        box-shadow: 0 2px 4px 0px rgba(0,0,0,0);
+    border: 1px solid rgba(109,70,30,0);
+    background-color: #fe413c;
+    color: #fafafa;
+    border-radius: 15px; 
+}
+
+window.csd > decoration {
+        box-shadow:
+        8px 6px 11.5px -1.5px rgba(0,0,0, 0.12),
+        15px 11px 21px -2px rgba(0,0,0, 0.13),
+        26px 20px 36px -2.5px rgba(0,0,0, 0.13),
+
+        2px 1.5px 3px -0.5px rgba(0,0,0, 0.11),
+        4px 3px 6px -1px rgba(0,0,0, 0.11),
+        -6px -4px 6px -2px rgba(0,0,0, 0.05),
+        0 0 0 1px rgba(0,0,0, 0.1);
+
+}
+window.csd:backdrop > decoration {
+        box-shadow:
+        8px 6px 11.5px -1.5px rgba(0,0,0, 0.05),
+        15px 11px 21px -2px rgba(0,0,0, 0.05),
+        26px 20px 36px -2.5px rgba(0,0,0, 0.05);
+
+}
+
+button.titlebutton,
+windowcontrols > button {
+    color: transparent;
+    min-width: 18px;
+    min-height: 18px;
+    border-radius: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*button.titlebutton:backdrop,
+windowcontrols > button:backdrop {
+    opacity: 0.65;
+}*/
+
+button.titlebutton > image,
+windowcontrols > button > image {
+    padding: 0;
+}
+
+.titlebar .right,
+windowcontrols.end {
+    margin-right: 4px;
+}
+
+.titlebar .left,
+windowcontrols.start {
+    margin-left: 8px;
+}
+
+button.titlebutton.close, button.titlebutton.maximize, button.titlebutton.minimize,
+windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize {
+    background-color: transparent;
+}
+
+
+button.titlebutton.close:hover,
+button.titlebutton.close:hover:backdrop,
+windowcontrols > button.close:hover,
+windowcontrols > button.close:hover:backdrop {
+    background-color: #fe413c;
+    background-image: none;
+    padding: 6px 0px;
+    border-radius: 9px;
+}
+
+button.titlebutton.maximize:hover,
+button.titlebutton.maximize:hover:backdrop,
+windowcontrols > button.maximize:hover,
+windowcontrols > button.maximize:hover:backdrop {
+    background-color: #2cff76;
+    background-image: none;
+    padding: 6px 0px;
+    border-radius: 9px;
+}
+
+button.titlebutton.minimize:hover,
+button.titlebutton.minimize:hover:backdrop,
+windowcontrols > button.minimize:hover,
+windowcontrols > button.minimize:hover:backdrop {
+    background-color: #ffbc2c;
+    background-image: none;
+    padding: 6px 0px;
+    border-radius: 9px;
+}
+
+button.titlebutton.close:backdrop, button.titlebutton.maximize:backdrop, button.titlebutton.minimize:backdrop,
+windowcontrols > button.close:backdrop, windowcontrols > button.maximize:backdrop, windowcontrols > button.minimize:backdrop {
+    background-color: transparent;
+}
